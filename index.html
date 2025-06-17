@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Markdown Previewer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <!-- Headings Row -->
+  <div class="top-row">
+    <div class="pane">
+      <h2>Markdown Input</h2>
+    </div>
+    <div class="pane">
+      <h2>Live Preview</h2>
+    </div>
+  </div>
+
+  <!-- Textarea and Preview Row -->
+  <div class="bottom-row">
+    <div class="pane">
+      <textarea id="markdown-input" placeholder="Type Markdown here..."># Welcome
+
+This is **bold**, and this is *italic*.
+
+- Item 1
+- Item 2
+- [Link](https://openai.com)</textarea>
+    </div>
+    <div class="pane preview" id="preview-output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
