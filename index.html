@@ -8,30 +8,81 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <!-- Headings Row -->
-  <div class="top-row">
-    <div class="pane">
-      <h2>Markdown Input</h2>
-    </div>
-    <div class="pane">
-      <h2>Live Preview</h2>
-    </div>
+  <div class="header-bar">
+    <button id="theme-toggle" title="Toggle light/dark mode" class="header-btn left-btn">🌙</button>
+    <h1>Markdown Previewer</h1>
+    <button id="docs-btn" class="header-btn right-btn" title="View Documentation">Docs</button>
   </div>
-
-  <!-- Textarea and Preview Row -->
   <div class="bottom-row">
     <div class="pane">
-      <textarea id="markdown-input" placeholder="Type Markdown here..."># Welcome
+      <h2>Markdown Input</h2>
+      <div class="input-box">
+        <textarea id="markdown-input" placeholder="Type Markdown here..."># Welcome
 
 This is **bold**, and this is *italic*.
 
 - Item 1
 - Item 2
-- [Link](https://openai.com)</textarea>
+</textarea>
+      </div>
     </div>
-    <div class="pane preview" id="preview-output"></div>
+    <div class="pane">
+      <h2>Live Preview</h2>
+      <div class="input-box">
+        <div id="preview-output" class="preview-textbox"></div>
+      </div>
+    </div>
   </div>
-
+  <div id="docs-popup" class="docs-popup" style="display:none;">
+    <div class="docs-content">
+      <button class="close-btn" id="close-docs">&times;</button>
+      <div class="docs-inner">
+        <h2 class="docs-title">Marker Documentation</h2>
+        <h3>Introduction</h3>
+        <p>The Markdown Previewer is a web application that allows users to write and preview Markdown in real time. It helps users see formatted output as they type Markdown syntax.</p>
+        <h3>Where it is used</h3>
+        <p>Markdown Previewers are used in note-taking apps, documentation tools, developer platforms, and content management systems.</p>
+        <h3>Use cases</h3>
+        <ul>
+          <li>Writing technical documentation</li>
+          <li>Blogging and content creation</li>
+          <li>Note-taking and knowledge management</li>
+          <li>Learning and teaching Markdown</li>
+        </ul>
+        <h3>Advantages</h3>
+        <ul>
+          <li>Instant feedback for Markdown syntax</li>
+          <li>Improved productivity and accuracy</li>
+          <li>Easy to use and accessible</li>
+        </ul>
+        <h3>Tools used</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Marked.js (Markdown parser)</li>
+        </ul>
+        <h3>Markdown Syntax Examples</h3>
+        <div class="md-examples">
+          <b>Heading:</b> <code># Heading 1</code><br>
+          <b>Subheading:</b> <code>## Heading 2</code><br>
+          <b>Bold:</b> <code>**bold text**</code><br>
+          <b>Italic:</b> <code>*italic text*</code><br>
+          <b>Strikethrough:</b> <code>~~strikethrough~~</code><br>
+          <b>Blockquote:</b> <code>&gt; Blockquote</code><br>
+          <b>Ordered List:</b> <code>1. First item\n2. Second item</code><br>
+          <b>Unordered List:</b> <code>- Item 1\n- Item 2</code><br>
+          <b>Code (inline):</b> <code>`code`</code><br>
+          <b>Code Block:</b> <code>```js\nconsole.log('Hello');\n```</code><br>
+          <b>Horizontal Rule:</b> <code>---</code><br>
+          <b>Link:</b> <code>[title](https://example.com)</code><br>
+          <b>Image:</b> <code>![alt text](image.jpg)</code><br>
+          <b>Task List:</b> <code>- [x] Task 1\n- [ ] Task 2</code><br>
+          <b>Table:</b> <code>| Col1 | Col2 |\n|---|---|\n| A | B |</code><br>
+          <b>HTML:</b> <code>&lt;u&gt;underline&lt;/u&gt;</code><br>
+        </div>
+        <button id="download-pdf" class="download-btn">Download as PDF</button>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
